@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
-
+    <link rel="icon" href="./—Pngtree—mail letter flat icon vector_5729172.png">
+    <!-- <link rel="icon" href="http://example.com/favicon.png"> -->
 </head>
 <body>
     <style>
@@ -68,7 +69,12 @@
             top: 0;
             left: 0;
             padding: 80px 45px;
-
+            visibility: visible;
+            opacity: 1;
+        }
+        .main .wrapper .message_wrapper.active{
+            visibility: hidden;
+            opacity: 0;
         }
         .main .wrapper .message_wrapper .message{
             font-family: 'Cedarville Cursive', cursive;
@@ -171,14 +177,14 @@
     </div>
     <script>
         const btn_close = document.querySelector('.btn_close')
-        const texts = ["Hi Aira, Happy Monthsary thankyou for always making me happy, giving me gifts and a car, Now I know how to drive but I dont have license hehe also for giving your whole day and time to me......", "Thankyou also for giving me a try on your skins in ml and 1000 pesos recall I appreciate it all hehe......", "I hope I make you happy always and I hope you enjoy this thankyou again Happy Monthsary........"];
+        const message_wrapper = document.querySelector('.message_wrapper')
+        const texts = ["Hi Aira, Happy Monthsary!! I just want to tell that thankyou for always making me happy and giving all the love and taking care of me, giving me gifts and a toy car that I didnt expect to have......", "Thank you for giving your whole day and time to me And for giving me a try on your skins in ml and 1000 pesos recall, I appreciate it all hehe. Bebi Sorry for all the lie and making you cry, I dont want you to cry because of me :< ......", "Aira I hope I make you happy always and I hope you enjoy this thankyou again Happy Monthsary........"];
         let count = 0;
         let index = 0;
         let currentText = "";
         let letter = "";
 
         function type(){
-
 
             currentText = texts[count];
             letter = currentText.slice(0, ++index);
@@ -201,11 +207,12 @@
         const btn = document.querySelector('.btn')
         const button_wrapper = document.querySelector('.button_wrapper')
         const wrapper = document.querySelector('.wrapper')
+
         btn.addEventListener('click', () => {
             button_wrapper.classList.toggle('active')
 
             wrapper.classList.toggle('active')
-
+            message_wrapper.classList.remove('active')
             type();
             audio.play();
         })
@@ -214,7 +221,7 @@
             button_wrapper.classList.toggle('active')
 
             wrapper.classList.toggle('active')
-
+            message_wrapper.classList.add('active')
         })
     </script>
 </body>
